@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interactive simulator for circuit and packet switching networks. Learn networking concepts through visual demonstrations." />
+    <meta name="keywords" content="networking, circuit switching, packet switching, simulator, education" />
+    <meta name="author" content="NetSwitch" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="color-scheme" content="light dark" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NetSwitch — Circuit & Packet Switching Simulator" />
+    <meta property="og:description" content="Interactive simulator for circuit and packet switching networks." />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    
+    <!-- Global Styles -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      :root {
+        --bg-primary: #0f172a;
+        --bg-secondary: #1a2342;
+        --text-primary: #ffffff;
+        --text-secondary: #cbd5e1;
+        --accent: #3b82f6;
+        --accent-hover: #2563eb;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Loading state */
+      .no-js {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .no-js h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      
+      .no-js p {
+        color: var(--text-secondary);
+        max-width: 500px;
+      }
+    </style>
+    
+    <title>NetSwitch — Circuit & Packet Switching</title>
+    <script>
+      // GitHub Pages SPA – restore the path that was saved by 404.html
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.pathname + location.search + location.hash) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <div class="no-js">
+        <div>
+          <h1>JavaScript Required</h1>
+          <p>NetSwitch requires JavaScript to be enabled. Please enable JavaScript in your browser settings.</p>
+        </div>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
