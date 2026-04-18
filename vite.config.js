@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const pagesBase = '/packet-switching-app-submission/'
-const isVercel = process.env.VERCEL
-const isPagesBuild = process.env.GITHUB_PAGES === 'true' || process.env.GITHUB_ACTIONS === 'true'
-const base = isVercel ? '/' : (isPagesBuild ? pagesBase : '/')
+const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || 'packet-switching-app-submission'
+const pagesBase = `/${repoName}/`
+const isPagesBuild = process.env.GITHUB_PAGES === 'true'
+const base = isPagesBuild ? pagesBase : '/'
 
 export default defineConfig({
   base,

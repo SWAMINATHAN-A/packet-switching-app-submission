@@ -6,10 +6,20 @@
     <title>Redirecting…</title>
     <script>
       (function () {
-        var base = '/packet-switching-app-submission/'
+        var notFoundFile = '404.html'
         var path = window.location.pathname
-        var relative = path.indexOf(base) === 0 ? path.slice(base.length) : ''
-        var redirect = relative === '404.html' ? base : (base + relative + window.location.search + window.location.hash)
+        var pathParts = path.split('/').filter(Boolean)
+        var base = '/'
+        if (path.endsWith('/' + notFoundFile)) {
+          base = path.slice(0, -notFoundFile.length)
+        } else if (pathParts.length > 0) {
+          base = '/' + pathParts[0] + '/'
+        }
+        var relative = path.startsWith(base) ? path.slice(base.length) : path.replace(/^\//, '')
+        var redirect = base
+        if (relative !== notFoundFile) {
+          redirect = base + relative + window.location.search + window.location.hash
+        }
         try {
           window.sessionStorage.setItem('redirect', redirect)
         } catch (e) {

@@ -155,7 +155,7 @@ Check it out live on GitHub Pages: **[swaminathan-a.github.io/packet-switching-a
 ### GitHub Pages notes
 - Production base path is configured for this repository: `/packet-switching-app-submission/`
 - `public/404.html` provides SPA fallback redirects for direct/deep links on Pages
-- Vercel keeps `/` as base automatically when `VERCEL` is set
+- Non-Pages builds use `/` as the default base path
 
 ## 🔧 Development
 
