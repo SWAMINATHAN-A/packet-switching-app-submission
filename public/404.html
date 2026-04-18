@@ -15,7 +15,15 @@
         } else if (pathParts.length > 0) {
           base = '/' + pathParts[0] + '/'
         }
-        var relative = path.startsWith(base) ? path.slice(base.length) : path.replace(/^\//, '')
+        var baseWithoutTrailingSlash = base.endsWith('/') ? base.slice(0, -1) : base
+        var relative = ''
+        if (path === base || path === baseWithoutTrailingSlash) {
+          relative = ''
+        } else if (path.startsWith(base)) {
+          relative = path.slice(base.length)
+        } else {
+          relative = path.replace(/^\//, '')
+        }
         var redirect = base
         if (relative !== notFoundFile) {
           redirect = base + relative + window.location.search + window.location.hash

@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1] || 'packet-switching-app-submission'
-const pagesBase = `/${repoName}/`
+const repoName = process.env.GITHUB_REPOSITORY?.split('/')[1]
+const pagesBase = repoName ? `/${repoName}/` : '/'
 const isPagesBuild = process.env.GITHUB_PAGES === 'true'
 const base = isPagesBuild ? pagesBase : '/'
 
