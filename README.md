@@ -150,9 +150,12 @@ src/
 
 ## 🌐 Live Demo
 
-Check it out live: **[packet-switching-app.vercel.app](https://packet-switching-app.vercel.app)**
+Check it out live on GitHub Pages: **[swaminathan-a.github.io/packet-switching-app-submission](https://swaminathan-a.github.io/packet-switching-app-submission/)**
 
-Built and hosted on Vercel for instant, reliable deployment.
+### GitHub Pages notes
+- Production base path is configured for this repository: `/packet-switching-app-submission/`
+- `public/404.html` provides SPA fallback redirects for direct/deep links on Pages
+- Non-Pages builds use `/` as the default base path
 
 ## 🔧 Development
 
