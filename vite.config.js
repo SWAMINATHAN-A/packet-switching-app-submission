@@ -1,8 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
+const pagesBase = '/packet-switching-app-submission/'
+const isVercel = process.env.VERCEL
+const isPagesBuild = process.env.GITHUB_PAGES === 'true' || process.env.GITHUB_ACTIONS === 'true'
+const base = isVercel ? '/' : (isPagesBuild ? pagesBase : '/')
+
 export default defineConfig({
-  base: process.env.VERCEL ? '/' : '/packet-switching-app-submission/',
+  base,
   plugins: [react()],
   server: {
     port: 5173,

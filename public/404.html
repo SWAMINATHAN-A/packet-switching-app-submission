@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting…</title>
+    <script>
+      (function () {
+        var base = '/packet-switching-app-submission/'
+        var path = window.location.pathname
+        var relative = path.indexOf(base) === 0 ? path.slice(base.length) : ''
+        var redirect = relative === '404.html' ? base : (base + relative + window.location.search + window.location.hash)
+        try {
+          window.sessionStorage.setItem('redirect', redirect)
+        } catch (e) {
+          // ignore storage failures and continue redirect
+        }
+        window.location.replace(base)
+      })()
+    </script>
+  </head>
+  <body></body>
+</html>
